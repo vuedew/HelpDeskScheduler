@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Login | Help Desk Scheduler</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="container login-shell">
+    <div class="card">
+      <div class="login-brand">
+        <img src="./umn-logo.png" alt="UMN Crookston logo" class="login-logo">
+        <h1 class="login-title">Help Desk Scheduler</h1>
+      </div>
+
+      <label>Email</label>
+      <input id="email" type="email" placeholder="name@example.com" autocomplete="username" />
+
+      <label>Password</label>
+      <input id="pw" type="password" placeholder="••••••••" autocomplete="current-password" />
+
+      <div id="err" class="notice" style="display:none;"></div>
+
+      <button class="btn" id="loginBtn">Login</button>
+    </div>
+  </div>
+
+  <script src="./app.js"></script>
+  <script src="./api.js"></script>
+  <script src="./login.integration.js"></script>
+</body>
+</html>

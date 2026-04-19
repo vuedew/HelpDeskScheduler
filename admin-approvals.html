@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin Approvals | Help Desk Scheduler</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="nav">
+      <div class="left">
+        <div class="brand-wrap">
+          <img src="./umn-logo.png" alt="UMN Crookston" class="brand-logo">
+          <div class="brand">
+            <div class="brand-title">Help Desk Scheduler</div>
+            <div class="brand-subtitle">University of Minnesota Crookston</div>
+          </div>
+        </div>
+
+        <a data-nav href="admin-dashboard.html">Overview</a>
+        <a data-nav href="admin-schedule.html">Manage Schedule</a>
+        <a data-nav href="admin-approvals.html">Approvals</a>
+      </div>
+
+      <div class="right">
+        <span class="chip">User: <b id="userName"></b></span>
+        <span class="chip">Role: <b id="roleName"></b></span>
+        <button class="btn" onclick="logout()">Logout</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="row">
+        <h1 style="margin:0;">Pending Approvals</h1>
+        <div class="spacer"></div>
+        <span class="chip">Count: <b id="count"></b></span>
+      </div>
+
+      <table class="table" style="margin-top:12px;">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Requester</th>
+            <th>Shift Details</th>
+            <th>Type</th>
+            <th>Reason</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="apBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="./app.js"></script>
+  <script src="./api.js"></script>
+  <script src="./admin-approvals.integration.js"></script>
+</body>
+</html>

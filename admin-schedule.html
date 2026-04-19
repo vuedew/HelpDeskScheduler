@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Schedule Builder</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="nav">
+      <div class="left">
+        <div class="brand-wrap">
+          <img src="./umn-logo.png" class="brand-logo">
+          <div class="brand">
+            <div class="brand-title">Help Desk Scheduler</div>
+            <div class="brand-subtitle">UMN Crookston</div>
+          </div>
+        </div>
+
+        <a data-nav href="admin-dashboard.html">Overview</a>
+        <a data-nav href="admin-schedule.html">Schedule</a>
+        <a data-nav href="admin-approvals.html">Approvals</a>
+      </div>
+
+      <div class="right">
+        <span class="chip">User: <b id="userName"></b></span>
+        <span class="chip">Role: <b id="roleName"></b></span>
+        <button class="btn" onclick="logout()">Logout</button>
+      </div>
+    </div>
+
+<div class="card">
+  <h1>Schedule Builder</h1>
+
+  <div class="row">
+    <span class="chip">Week: <b id="boardWeekStart"></b></span>
+    <span class="chip">Status: <b id="builderStatus"></b></span>
+  </div>
+
+  <div class="row" style="margin-top:12px;">
+<label for="scheduleDate" style="margin:0;">Date</label>
+<input id="scheduleDate" type="date" style="max-width:220px;">
+  </div>
+
+  <div class="board-shell" style="margin-top:18px;">
+    <div class="board-left" id="boardLeft"></div>
+    <div class="board-right">
+      <div class="board-scroll">
+        <div id="scheduleBoard" class="board-wrap"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="./app.js"></script>
+  <script src="./api.js"></script>
+  <script src="./admin-schedule.integration.js"></script>
+</body>
+</html>

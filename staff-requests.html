@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Requests</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="nav">
+      <div class="left">
+        <div class="brand-wrap">
+          <img src="./umn-logo.png" class="brand-logo">
+          <div class="brand">
+            <div class="brand-title">Help Desk Scheduler</div>
+            <div class="brand-subtitle">UMN Crookston</div>
+          </div>
+        </div>
+
+        <a data-nav href="staff-dashboard.html">Dashboard</a>
+        <a data-nav href="staff-requests.html">Requests</a>
+      </div>
+
+      <div class="right">
+        <span class="chip">User: <b id="userName"></b></span>
+        <span class="chip">Role: <b id="roleName"></b></span>
+        <button class="btn" onclick="logout()">Logout</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h1>Submit Request</h1>
+
+      <label>Date</label>
+      <input id="dateSelect" type="date" style="max-width:220px;">
+
+      <label>Shift</label>
+      <select id="shiftSelect"></select>
+
+      <label>Type</label>
+      <select id="requestType">
+        <option value="coverage">Coverage</option>
+        <option value="trade">Trade</option>
+      </select>
+
+      <label>Reason</label>
+      <textarea id="reasonInput"></textarea>
+
+      <button id="submitRequest" class="btn primary" style="margin-top:10px;">
+        Submit Request
+      </button>
+    </div>
+
+    <div class="card" style="margin-top:16px;">
+      <h2>My Requests</h2>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Assignment</th>
+            <th>Type</th>
+            <th>Status</th>
+            <th>Created</th>
+          </tr>
+        </thead>
+        <tbody id="reqBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="./app.js"></script>
+  <script src="./api.js"></script>
+  <script src="./staff-requests.integration.js"></script>
+</body>
+</html>
