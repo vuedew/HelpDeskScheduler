@@ -1,4 +1,7 @@
-const API_BASE = "http://localhost:5050";
+const API_BASE =
+  window.location.hostname === "localhost"
+    ? "http://localhost:5050"
+    : "http://umc-itm4900-senior-design-dev-app-01:5050";
 
 async function apiRequest(path, options = {}) {
   const config = {
